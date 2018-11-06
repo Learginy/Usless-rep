@@ -1,0 +1,81 @@
+﻿<Window x:Class="WpfStatistics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical">
+        <ComboBox ItemsSource="{Binding Workgroups}" SelectedItem="{Binding SelectedWorkgroup}"/>
+        <StackPanel Orientation="Horizontal">
+            <Label>Agents Logged In</Label>
+            <Border Background="{Binding AgentsLoggedInAndActivated.BackgroundColor}" >
+                <Label Content="{Binding AgentsLoggedInAndActivated.Value}" Foreground="{Binding AgentsLoggedInAndActivated.ForegroundColor}"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Not Available</Label>
+            <Border Background="{Binding NotAvailable.BackgroundColor}" >
+                <Label Content="{Binding NotAvailable.Value}" Foreground="{Binding NotAvailable.ForegroundColor}"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Available for ACD Interactions</Label>
+            <Border Background="{Binding NumberAvailableForACDInteractions.BackgroundColor}" >
+                <Label Content="{Binding NumberAvailableForACDInteractions.Value}" Foreground="{Binding NumberAvailableForACDInteractions.ForegroundColor}"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Percent Available</Label>
+            <Border Background="{Binding PercentAvailable.BackgroundColor}" >
+                <Label Content="{Binding PercentAvailable.Value}" Foreground="{Binding PercentAvailable.ForegroundColor}"/>
+            </Border>
+        </StackPanel>
+      
+        <ComboBox ItemsSource="{Binding Intervals}" SelectedItem="{Binding SelectedInterval}"/>
+        <StackPanel Orientation="Horizontal">
+            <Label>Average Hold Time</Label>
+            <Border Background="{Binding AverageHoldTime.BackgroundColor}" >
+                <Label Content="{Binding AverageHoldTime.Value}" Foreground="{Binding PercentAvailable.ForegroundColor}"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Average Talk Time</Label>
+            <Border Background="{Binding AverageTalkTime.BackgroundColor}" >
+                <Label Content="{Binding AverageTalkTime.Value}" Foreground="{Binding AverageTalkTime.ForegroundColor}"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Average Wait Time</Label>
+            <Border Background="{Binding AverageWaitTime.BackgroundColor}" >
+                <Label Content="{Binding AverageWaitTime.Value}" Foreground="{Binding AverageWaitTime.ForegroundColor}"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Abandoned</Label>
+            <Border Background="{Binding InteractionsAbandoned.BackgroundColor}" >
+                <Label Content="{Binding InteractionsAbandoned.Value}" Foreground="{Binding InteractionsAbandoned.ForegroundColor}"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Answered</Label>
+            <Border Background="{Binding InteractionsAnswered.BackgroundColor}" >
+                <Label Content="{Binding InteractionsAnswered.Value}" Foreground="{Binding InteractionsAnswered.ForegroundColor}"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Completed</Label>
+            <Border Background="{Binding InteractionsCompleted.BackgroundColor}" >
+                <Label Content="{Binding InteractionsCompleted.Value}" Foreground="{Binding InteractionsCompleted.ForegroundColor}"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Connected</Label>
+            <Border Background="{Binding InteractionsConnected.BackgroundColor}" >
+                <Label Content="{Binding InteractionsConnected.Value}" Foreground="{Binding InteractionsConnected.ForegroundColor}"/>
+            </Border>
+        </StackPanel>
+    </StackPanel>
+</Window>
